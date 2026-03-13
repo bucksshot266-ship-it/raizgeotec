@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raiz Geotec | Contato por E-mail</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="email.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="bg-noise"></div>
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<!-- NAV -->
+<nav>
+<a class="logo" href="#">
+  <img src="logo.png" alt="Raiz Geotec" class="logo-mark">
+  <span class="logo-text">Raiz <span>Geotec</span></span>
+</a>
+  <a class="nav-back" href="raizgeotec.html">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Voltar ao Portfólio
+  </a>
+</nav>
+
+<main>
+  <div class="email-wrapper">
+
+    <div class="chip">✉️ Fale com a equipe</div>
+
+    <h1 class="email-title">
+      Entre em <em>contato</em><br/>por e-mail
+    </h1>
+    <p class="email-subtitle">
+      Use a mensagem abaixo como modelo. Copie, personalize se quiser, e envie direto para nossa equipe — respondemos em até 1 dia útil.
+    </p>
+
+    <!-- CARD -->
+    <div class="email-card">
+
+      <div class="card-header">
+        <div class="card-header-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </div>
+        <div class="card-header-text">
+          <h2>Nova mensagem</h2>
+          <p>Orçamento · CAR · Geotecnologia</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <!-- PARA -->
+        <div class="field-row">
+          <div class="field-label">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Para
+          </div>
+          <div class="field-to">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            <span class="email-address" id="emailAddress">contato@raizgeotec.com.br</span>
+            <button class="copy-btn" id="copyEmailBtn" onclick="copyEmail()">Copiar</button>
+          </div>
+        </div>
+
+        <!-- ASSUNTO -->
+        <div class="field-row">
+          <div class="field-label">
+            <svg viewBox="0 0 24 24"><path d="M7 7h10M7 11h6"/><rect x="2" y="3" width="20" height="18" rx="2"/></svg>
+            Assunto
+          </div>
+          <div class="field-subject">
+            <span>Solicitação de Orçamento – CAR</span>
+            <span class="subject-badge">Pré-definido</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- MENSAGEM -->
+        <div class="message-label">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Mensagem pronta
+        </div>
+
+        <div class="message-box">
+          <p class="message-text" id="messageText"><strong>Olá, equipe Raiz Geotec!</strong>
+
+Encontrei o portfólio de vocês e fiquei interessado(a) nos serviços de elaboração e regularização do Cadastro Ambiental Rural (CAR).
+
+Gostaria de solicitar um <strong>orçamento</strong> para o meu imóvel rural, com as seguintes informações:
+
+• Nome do imóvel: [seu imóvel]
+• Município: [município – GO]
+• Área aproximada: [XX hectares]
+• Situação atual: [Novo CAR / Correção / Atualização]
+
+Por favor, entrem em contato para que possamos alinhar os detalhes.
+
+Aguardo o retorno de vocês!
+
+Atenciosamente,
+[Seu nome]
+[Telefone / WhatsApp]</p>
+        </div>
+
+      </div>
+
+      <div class="card-actions">
+        <a class="btn-send" id="sendBtn" href="#" onclick="openEmail(); return false;">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Abrir no e-mail
+        </a>
+        <button class="btn-copy-all" onclick="copyAll()">
+          <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar mensagem
+        </button>
+      </div>
+
+    </div>
+    <!-- /CARD -->
+
+    <p class="footer-note">
+      Prefere o WhatsApp? <a href="https://wa.me/5500000000000">Fale conosco diretamente →</a><br/>
+      © 2025 Raiz Geotec · Uruaçu–GO
+    </p>
+
+  </div>
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastMsg">Copiado!</span>
+</div>
+
+<script>
+  const EMAIL = 'contato@raizgeotec.com.br';
+  const SUBJECT = 'Solicitação de Orçamento – CAR';
+  const MESSAGE = document.getElementById('messageText').innerText;
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  function copyEmail() {
+    navigator.clipboard.writeText(EMAIL).then(() => {
+      const btn = document.getElementById('copyEmailBtn');
+      btn.textContent = '✓ Copiado';
+      btn.classList.add('copied');
+      showToast('E-mail copiado!');
+      setTimeout(() => {
+        btn.textContent = 'Copiar';
+        btn.classList.remove('copied');
+      }, 2500);
+    });
+  }
+
+  function copyAll() {
+    navigator.clipboard.writeText(MESSAGE).then(() => {
+      showToast('Mensagem copiada!');
+    });
+  }
+
+  function openEmail() {
+    const body = encodeURIComponent(MESSAGE);
+    const subj = encodeURIComponent(SUBJECT);
+    window.location.href = `mailto:${EMAIL}?subject=${subj}&body=${body}`;
+  }
+
+  // Nav scroll effect (subtle)
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow =
+      window.scrollY > 20 ? '0 4px 40px rgba(0,0,0,0.5)' : '0 4px 40px rgba(0,0,0,0.3)';
+  });
+</script>
+</body>
+</html>
